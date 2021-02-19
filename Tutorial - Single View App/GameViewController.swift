@@ -62,6 +62,10 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet var label: UILabel!
     @IBOutlet var table: UITableView!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var map: UIImageView!
+    
+    
     var currentQuestion: Question?
     
     override func viewDidLoad() {
@@ -71,6 +75,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func viewDidLayoutSubviews() {
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
         super.viewDidLayoutSubviews()
         configureUI(question: gameModels.first!)
     }
@@ -79,6 +84,9 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         currentQuestion = question
         table.delegate = self
         table.dataSource = self
+        image.image = UIImage(named: question.lat)
+        map.image = UIImage(named: question.lat + "Map")
+
     }
     
     private func checkAnswer(answer: Answer, question: Question)-> Bool{
@@ -92,7 +100,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     private func setupQuestions(){
         // from https://aqicn.org/here/
         
-        gameModels.append(Question(text: "Dehli, India", aqi: 219, lat: 0, lon: 0, answers:[
+        gameModels.append(Question(text: "Dehli, India", aqi: 219, lat: "Dehli", lon: 0, answers:[
             Answer(text: "Good", correct: false),
             Answer(text: "Moderate", correct: false),
             Answer(text: "Unhealthy for sensitive group", correct: false),
@@ -101,7 +109,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
             Answer(text: "Hazardous", correct: false),
         ]
         ))
-        gameModels.append(Question(text: "London, England", aqi: 25, lat: 0, lon: 0, answers:[
+        gameModels.append(Question(text: "London, England", aqi: 25, lat: "London", lon: 0, answers:[
             Answer(text: "Good", correct: true),
             Answer(text: "Moderate", correct: false),
             Answer(text: "Unhealthy for sensitive group", correct: false),
@@ -111,7 +119,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         ]
         ))
         
-        gameModels.append(Question(text: "Tokyo, Japan", aqi: 10, lat: 0, lon: 0, answers:[
+        gameModels.append(Question(text: "Tokyo, Japan", aqi: 10, lat: "Tokyo", lon: 0, answers:[
             Answer(text: "Good", correct: true),
             Answer(text: "Moderate", correct: false),
             Answer(text: "Unhealthy for sensitive group", correct: false),
@@ -120,7 +128,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
             Answer(text: "Hazardous", correct: false),
         ]
         ))
-        gameModels.append(Question(text: "Singapore, Respublic of Singapore", aqi: 61, lat: 0, lon: 0, answers:[
+        gameModels.append(Question(text: "Singapore, Respublic of Singapore", aqi: 61, lat: "Singapore", lon: 0, answers:[
             Answer(text: "Good", correct: false),
             Answer(text: "Moderate", correct: true),
             Answer(text: "Unhealthy for sensitive group", correct: false),
@@ -130,7 +138,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         ]
         ))
         
-        gameModels.append(Question(text: "Beijing, China", aqi: 122, lat: 0, lon: 0, answers:[
+        gameModels.append(Question(text: "Beijing, China", aqi: 122, lat: "Beijing", lon: 0, answers:[
             Answer(text: "Good", correct: false),
             Answer(text: "Moderate", correct: false),
             Answer(text: "Unhealthy for sensitive group", correct: true),
@@ -140,7 +148,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         ]
         ))
         
-        gameModels.append(Question(text: "Kyiv, Ukraine", aqi: 127, lat: 0, lon: 0, answers:[
+        gameModels.append(Question(text: "Kyiv, Ukraine", aqi: 127, lat: "Kyiv", lon: 0, answers:[
             Answer(text: "Good", correct: false),
             Answer(text: "Moderate", correct: false),
             Answer(text: "Unhealthy for sensitive group", correct: true),
@@ -150,7 +158,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         ]
         ))
         
-        gameModels.append(Question(text: "Krasnoyarsk, Russia", aqi: 182, lat: 0, lon: 0, answers:[
+        gameModels.append(Question(text: "Krasnoyarsk, Russia", aqi: 182, lat: "Krasnoyarsk", lon: 0, answers:[
             Answer(text: "Good", correct: false),
             Answer(text: "Moderate", correct: false),
             Answer(text: "Unhealthy for sensitive group", correct: false),
@@ -160,7 +168,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         ]
         ))
         
-        gameModels.append(Question(text: "Budapest, Hungary", aqi: 151, lat: 0, lon: 0, answers:[
+        gameModels.append(Question(text: "Budapest, Hungary", aqi: 151, lat: "Budapest", lon: 0, answers:[
             Answer(text: "Good", correct: false),
             Answer(text: "Moderate", correct: false),
             Answer(text: "Unhealthy for sensitive group", correct: false),
@@ -170,7 +178,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         ]
         ))
         
-        gameModels.append(Question(text: "Berlin, Germany", aqi: 76, lat: 0, lon: 0, answers:[
+        gameModels.append(Question(text: "Berlin, Germany", aqi: 76, lat: "Berlin", lon: 0, answers:[
             Answer(text: "Good", correct: false),
             Answer(text: "Moderate", correct: true),
             Answer(text: "Unhealthy for sensitive group", correct: false),
@@ -180,7 +188,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         ]
         ))
         
-        gameModels.append(Question(text: "Madrid, Germany", aqi: 53, lat: 0, lon: 0, answers:[
+        gameModels.append(Question(text: "Madrid, Spain", aqi: 53, lat: "Madrid", lon: 0, answers:[
             Answer(text: "Good", correct: false),
             Answer(text: "Moderate", correct: true),
             Answer(text: "Unhealthy for sensitive group", correct: false),
@@ -198,7 +206,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
 struct Question {
     var text: String
     let aqi: Int
-    let lat: Float
+    let lat: String     // contains imagename
     let lon: Float
     let answers: [Answer]
     
