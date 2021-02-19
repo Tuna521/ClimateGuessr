@@ -63,8 +63,8 @@
 		4006881E2249B6550042123D = {
 			isa = PBXGroup;
 			children = (
-				400688292249B6560042123D /* Tutorial - Single View App */,
-				4006883E2249B66D0042123D /* Tutorial - Single View AppTests */,
+				400688292249B6560042123D /* ClimateGuessr App */,
+				4006883E2249B66D0042123D /* ClimateGuessrTests */,
 				400688282249B6560042123D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,7 +78,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		400688292249B6560042123D /* Tutorial - Single View App */ = {
+		400688292249B6560042123D /* ClimateGuessr App */ = {
 			isa = PBXGroup;
 			children = (
 				4006882A2249B6560042123D /* AppDelegate.swift */,
@@ -90,16 +90,16 @@
 				400688312249B66C0042123D /* Assets.xcassets */,
 				400688332249B66C0042123D /* LaunchScreen.storyboard */,
 			);
-			path = "Tutorial - Single View App";
+			path = "ClimateGuessr App";
 			sourceTree = "<group>";
 		};
-		4006883E2249B66D0042123D /* Tutorial - Single View AppTests */ = {
+		4006883E2249B66D0042123D /* ClimateGuessrTests */ = {
 			isa = PBXGroup;
 			children = (
 				4006883F2249B66D0042123D /* Tutorial___Single_View_AppTests.swift */,
 				400688412249B66D0042123D /* Info.plist */,
 			);
-			path = "Tutorial - Single View AppTests";
+			path = ClimateGuessrTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,7 +148,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = "Jacque Crossett";
+				ORGANIZATIONNAME = Tina;
 				TargetAttributes = {
 					400688262249B6560042123D = {
 						CreatedOnToolsVersion = 10.1;
@@ -159,7 +159,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 400688222249B6550042123D /* Build configuration list for PBXProject "Tutorial - Single View App" */;
+			buildConfigurationList = 400688222249B6550042123D /* Build configuration list for PBXProject "ClimateGuessr" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -445,7 +445,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		400688222249B6550042123D /* Build configuration list for PBXProject "Tutorial - Single View App" */ = {
+		400688222249B6550042123D /* Build configuration list for PBXProject "ClimateGuessr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				400688422249B66D0042123D /* Debug */,

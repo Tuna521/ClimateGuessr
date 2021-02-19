@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Tutorial - Single View App.xcodeproj">
+      location = "self:/Users/tina/Documents/GitHub/ClimateGuessr/ClimateGuessr.xcodeproj">
    </FileRef>
 </Workspace>
