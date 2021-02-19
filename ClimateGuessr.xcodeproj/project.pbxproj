@@ -63,7 +63,7 @@
 		4006881E2249B6550042123D = {
 			isa = PBXGroup;
 			children = (
-				400688292249B6560042123D /* ClimateGuessr App */,
+				400688292249B6560042123D /* Tutorial - Single View App */,
 				4006883E2249B66D0042123D /* ClimateGuessrTests */,
 				400688282249B6560042123D /* Products */,
 			);
@@ -78,7 +78,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		400688292249B6560042123D /* ClimateGuessr App */ = {
+		400688292249B6560042123D /* Tutorial - Single View App */ = {
 			isa = PBXGroup;
 			children = (
 				4006882A2249B6560042123D /* AppDelegate.swift */,
@@ -90,7 +90,7 @@
 				400688312249B66C0042123D /* Assets.xcassets */,
 				400688332249B66C0042123D /* LaunchScreen.storyboard */,
 			);
-			path = "ClimateGuessr App";
+			path = "Tutorial - Single View App";
 			sourceTree = "<group>";
 		};
 		4006883E2249B66D0042123D /* ClimateGuessrTests */ = {
